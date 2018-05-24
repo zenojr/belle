@@ -1,3 +1,5 @@
+import { JwtTokenService } from './services/jwt-token.service';
+import { LocalStorageService } from './services/local-storage.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +29,13 @@ import routing from './app.routing';
     HttpModule,
     routing
   ],
-  providers: [AppComponent],
-  bootstrap: [AppComponent]
+  providers: [
+    AppComponent,
+    LocalStorageService,
+    JwtTokenService
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
+
+

@@ -1,3 +1,5 @@
+import { JwtTokenService } from './../services/jwt-token.service';
+import { LocalStorageService } from './../services/local-storage.service';
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
@@ -15,7 +17,9 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor( private http: Http ) { }
+  constructor( private http: Http, private jwtToken: JwtTokenService ) {
+
+  }
 
   ngOnInit() {
   }
@@ -23,9 +27,6 @@ export class LoginComponent implements OnInit {
   login() {
     this.http.post('https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/Login/v1.0/login', this.user)
     .toPromise()
-    .then(response => console.log(response));
+    .then(response => this.jwtToken.token = response.json().token); // guarda o token recebido pela API no localStorage
   }
-
 }
-
-
