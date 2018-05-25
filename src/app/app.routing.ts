@@ -1,3 +1,4 @@
+import { HomeComponent } from './components/home/home.component';
 
 
 import { LoginComponent } from './login/login.component';
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
         path: '',
         redirectTo: '/login',
         pathMatch: 'full'
+    },
+    {
+        path: 'home',
+        component: HomeComponent
     }
 ];
 

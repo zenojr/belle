@@ -13,12 +13,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import 'rxjs/add/operator/map';
 import routing from './app.routing';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
