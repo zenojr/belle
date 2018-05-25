@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,12 @@ export class HomeComponent implements OnInit {
 
   products: Array<Object>;
 
-  constructor( private http: Http, private jwtToken: JwtTokenService ) { }
+  constructor( private http: Http,
+               private jwtToken: JwtTokenService,
+               private auth: AuthService
+             ) {
+              console.log(this.auth.check);
+             }
 
   ngOnInit() {
     this.getProducts();

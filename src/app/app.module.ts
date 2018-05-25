@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import 'rxjs/add/operator/map';
 import routing from './app.routing';
 import { HomeComponent } from './components/home/home.component';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { HomeComponent } from './components/home/home.component';
   providers: [
     AppComponent,
     LocalStorageService,
-    JwtTokenService
+    JwtTokenService,
+    AuthService
   ],
   bootstrap: [AppComponent],
 })
