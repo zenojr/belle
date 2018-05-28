@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { JwtTokenService } from './../services/jwt-token.service';
 import { LocalStorageService } from './../services/local-storage.service';
 import { Http } from '@angular/http';
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor( private http: Http, private jwtToken: JwtTokenService ) {
+  constructor( private http: Http, private jwtToken: JwtTokenService, private router: Router ) {
 
   }
 
@@ -27,6 +28,10 @@ export class LoginComponent implements OnInit {
   login() {
     this.http.post('https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/Login/v1.0/login', this.user)
     .toPromise()
-    .then(response => this.jwtToken.token = response.json().token); // guarda o token recebido pela API no localStorage
+    .then(response => {
+          this.jwtToken.token =  response.json().token;
+          this.router.navigate(['home']);
+          }); // guarda o token recebido pela API no localStorage e redireciona para home
+          
   }
 }
