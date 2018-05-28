@@ -1,3 +1,4 @@
+import { AuthGuardRouterService } from './services/auth-guard-router.service';
 import { HomeComponent } from './components/home/home.component';
 
 
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
     },
     {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuardRouterService]
     }
 ];
 

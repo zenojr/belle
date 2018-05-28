@@ -15,6 +15,7 @@ import 'rxjs/add/operator/map';
 import routing from './app.routing';
 import { HomeComponent } from './components/home/home.component';
 import { AuthService } from './services/auth.service';
+import { AuthGuardRouterService } from './services/auth-guard-router.service';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AuthService } from './services/auth.service';
     AppComponent,
     LocalStorageService,
     JwtTokenService,
-    AuthService
+    AuthService,
+    AuthGuardRouterService
   ],
   bootstrap: [AppComponent],
 })
