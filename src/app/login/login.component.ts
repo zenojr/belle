@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  redirectAfterLogin = ['/home'];
+
   constructor( private http: Http, private jwtToken: JwtTokenService, private router: Router ) {
 
   }
@@ -30,8 +32,7 @@ export class LoginComponent implements OnInit {
     .toPromise()
     .then(response => {
           this.jwtToken.token =  response.json().token;
-          this.router.navigate(['home']);
+          this.router.navigate(this.redirectAfterLogin);
           }); // guarda o token recebido pela API no localStorage e redireciona para home
-          
   }
 }
