@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  products: Array<Object>;
+  menu: Array<Object>;
 
   constructor( private http: Http,
                private jwtToken: JwtTokenService,
@@ -28,12 +28,14 @@ export class HomeComponent implements OnInit {
   getProducts() {
     let requestOptions = new RequestOptions();
     requestOptions.headers = new Headers();
-    requestOptions.headers.set( 'Authorization', 'Bearer ${this.jwtToken.token}' );
+    requestOptions.headers.set( 'Authorization', this.jwtToken.token );
     requestOptions.headers.set('Content-type', 'application/json');
     this.http
-    .get('http://api.bellesoftware.com.br/v1.0/moedas', requestOptions)
+    .get('https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/listarmenu', requestOptions)
     .toPromise()
-    .then(response => this.products = response.json());
+    .then(response => this.menu = response.json());
+
+    console.log(this.menu);
   }
 
 }
