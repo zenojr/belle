@@ -16,13 +16,16 @@ import routing from './app.routing';
 import { HomeComponent } from './components/home/home.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardRouterService } from './services/auth-guard-router.service';
+import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MenuPrincipalComponent
   ],
   imports: [
     BrowserModule,
