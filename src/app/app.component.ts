@@ -1,6 +1,9 @@
 import { Http, Response } from '@angular/http';
 import { Component } from '@angular/core';
 import 'rxjs/add/operator/map';
+import { TranslateService } from '@ngx-translate/core';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,25 +12,13 @@ import 'rxjs/add/operator/map';
 })
 export class AppComponent {
   title = 'app';
-  // private apiUrl = 'https://address-book-demo.herokuapp.com/api/contacts';
-  // data: any = {};
 
-  // constructor(private http: Http ) {
-  //   console.log('Hy API!');
-  //   this.getContacts();
-  //   this.getData();
-  // }
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('pt');
+  }
 
-  // getData() {
-  //   return this.http.get(this.apiUrl).map((res: Response) => res.json());
-  // }
-
-
-  // getContacts() {
-  //   this.getData().subscribe(data => {
-  //     console.log(data);
-  //     this.data = data;
-  //   });
-  // }
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
 }
