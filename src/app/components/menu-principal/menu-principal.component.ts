@@ -48,7 +48,6 @@ export class MenuPrincipalComponent implements OnInit {
     .toPromise()
     .then(response => this.submenu = response.json());
 
-    console.log(this.submenu.menu);
 
   }
 
