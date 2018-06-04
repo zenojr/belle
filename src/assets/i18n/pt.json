@@ -1,11 +1,5 @@
-
 {
     "Title": "Exemplo de tradução",
-    "Intro": "Olá sou traduzido",
-    "Startpage": {
-        "TranslationSections": "Olá Mundo"
-    },
-     "Aboutpage": {
-        "TranslationSections": "Sou uma secção"
-    }
+    "Intro": "Olá sou  {{user.name}}, tenho {{ user.age }}"
+
 }

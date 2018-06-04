@@ -11,8 +11,12 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  // title = 'app';
 
+  user = {
+    name: 'Zeno',
+    age: 34
+  };
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('pt');
   }

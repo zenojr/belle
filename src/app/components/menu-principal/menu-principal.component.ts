@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'menu-principal',
+  selector: 'app-menu-principal',
   templateUrl: './menu-principal.component.html',
   styleUrls: ['./menu-principal.component.css']
 })
