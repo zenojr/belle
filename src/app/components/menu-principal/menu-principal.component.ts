@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 import { JwtTokenService } from './../../services/jwt-token.service';
 import { Http, RequestOptions, Headers } from '@angular/http';
@@ -18,12 +19,10 @@ export class MenuPrincipalComponent implements OnInit {
                private jwtToken: JwtTokenService,
                private auth: AuthService
              ) {
-              console.log(this.auth.check);
              }
 
   ngOnInit() {
     this.getMenu();
-    this.getSubmenu();
   }
 
   getMenu() {
@@ -35,20 +34,6 @@ export class MenuPrincipalComponent implements OnInit {
     .get('https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/listarmenu', requestOptions)
     .toPromise()
     .then(response => this.menu = response.json());
-
-    console.log(this.menu);
-  }
-
-  getSubmenu() {
-    const requestOptions = new RequestOptions();
-    requestOptions.headers = new Headers();
-    requestOptions.headers.set( 'Authorization', this.jwtToken.token );
-    requestOptions.headers.set( 'Content-type', 'application/json' );
-    this.http.get('https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/montarmenu', requestOptions)
-    .toPromise()
-    .then(response => this.submenu = response.json());
-
-
   }
 
 }

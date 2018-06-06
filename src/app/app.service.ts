@@ -8,6 +8,6 @@ import 'rxjs/add/operator/do';
 
 @Injectable()
 export class LoginService {
-    private _Url: 'http:127.0.0.1:8887/login.json';
+    // private _Url: 'http:127.0.0.1:8887/login.json';
 }
 

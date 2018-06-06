@@ -1,5 +1,5 @@
 {
-    "Title": "Exemplo de tradução",
-    "Intro": "Olá sou  {{user.name}}, tenho {{ user.age }}"
-
+    "Title": "Exemplo tradução",
+    "Welcome": "Bem Vindo",
+    
 }

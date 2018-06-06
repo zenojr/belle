@@ -1,9 +1,11 @@
+
 import { Router } from '@angular/router';
 import { JwtTokenService } from './../services/jwt-token.service';
 import { LocalStorageService } from './../services/local-storage.service';
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
