@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { JwtTokenService } from './services/jwt-token.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -38,6 +39,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ModalModule.forRoot(),
     FormsModule,
     HttpModule,
+    RouterModule,
     routing,
     HttpClientModule,
     TranslateModule.forRoot({
