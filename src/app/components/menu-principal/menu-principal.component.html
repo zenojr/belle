@@ -15,7 +15,7 @@
           {{ item.desc_menu }} 
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#" *ngFor="let subitem of submenu" > teste </a>
+          <a class="dropdown-item" href="#" > teste </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Cancel</a>
         </div>
@@ -52,6 +52,20 @@
 
 
 
-<ul *ngFor="let item of menu">
-  <li> {{ menu.nome }} </li>
-</ul>
+<!-- <ul *ngFor="let sub of submenu">
+  <li> {{ sub.menuitem }} </li>
+  
+</ul> -->
+
+<li class="nav-link" *ngFor="let subitem of submenu">
+  <a class="nav-link" href="#" role="button"> 
+    {{ subitem.desc_menu }} 
+  </a>
+</li>
+
+
+<li class="nav-link" *ngFor="let item of submenu">
+  <a class="nav-link" href="#" role="button"> 
+    {{ item.menuitem }} 
+  </a>
+</li>

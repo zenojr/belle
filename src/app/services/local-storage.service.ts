@@ -1,4 +1,6 @@
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+
 
 @Injectable()
 export class LocalStorageService {
@@ -7,7 +9,7 @@ export class LocalStorageService {
 
   set(key, value) { // define a key no localStorage
     window.localStorage[key] = value; // acessando localStorage como objt e setando a key
-    return this; // retornando o objt da localstorage inteiro
+    return this; // retornando o obj da localstorage inteiro
   }
 
   get(key, defaultValue = null) {

@@ -24,18 +24,17 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getProducts();
   }
-
+  // tslint:disable-next-line:member-ordering
+  menuUrl = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/listarmenu';
   getProducts() {
     let requestOptions = new RequestOptions();
     requestOptions.headers = new Headers();
     requestOptions.headers.set( 'Authorization', this.jwtToken.token );
     requestOptions.headers.set('Content-type', 'application/json');
     this.http
-    .get('https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/listarmenu', requestOptions)
+    .get(this.menuUrl, requestOptions)
     .toPromise()
     .then(response => this.menu = response.json());
-
-    console.log(this.menu);
   }
 
 }

@@ -24,6 +24,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { MontaMenuService } from './services/monta-menu.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     LocalStorageService,
     JwtTokenService,
     AuthService,
-    AuthGuardRouterService
+    AuthGuardRouterService,
+    MontaMenuService
   ],
   exports: [
     CommonModule,

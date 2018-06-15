@@ -12,16 +12,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  user = {
-    name: 'Arthur',
-    age: 42
-  };
+
+
 
   constructor(private translate: TranslateService) {
     translate.addLangs(['en', 'pt']);
     translate.setDefaultLang('pt');
 
-    let browserLang = translate.getBrowserLang();
+    const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/pt|en/) ? browserLang : 'en' );
   }
 
