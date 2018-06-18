@@ -30,7 +30,6 @@ export function createTranslateLoader(http: HttpClient) {
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { MontaMenuService } from './services/monta-menu.service';
 
 @NgModule({
   declarations: [
@@ -62,8 +61,7 @@ import { MontaMenuService } from './services/monta-menu.service';
     LocalStorageService,
     JwtTokenService,
     AuthService,
-    AuthGuardRouterService,
-    MontaMenuService
+    AuthGuardRouterService
   ],
   exports: [
     CommonModule,
