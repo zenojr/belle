@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { MontaMenuService } from './../../services/monta-menu.service';
-import { TranslateModule } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 import { JwtTokenService } from './../../services/jwt-token.service';
-import { Http, RequestOptions, Headers } from '@angular/http';
+import { Http, RequestOptions, Headers, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { AuthService } from '../../services/auth.service';
+
 
 
 
@@ -28,9 +28,9 @@ export class MenuPrincipalComponent implements OnInit {
              }
 
   ngOnInit() {
-    this.getMenu();
+    // this.getMenu();
     // this.montaMenu.query().subscribe(data => this.posts = data);
-    this.getNewMenu();
+    this.getSubMenu();
   }
 
 
@@ -53,36 +53,23 @@ linkListMenu = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Servic
 
 
   // tslint:disable-next-line:member-ordering
-  menuUrl = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/listarmenu';
+  menuUrl = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/montarmenu';
 
-  menu2: Array<Object>;
+  
 
-  getNewMenu() {
+  getSubMenu() {
     const requestOptions = new RequestOptions();
     requestOptions.headers = new Headers();
     requestOptions.headers.set( 'Authorization', this.jwtToken.token );
     requestOptions.headers.set('Content-type', 'application/json');
     this.http.get(this.menuUrl, requestOptions).toPromise()
-    .then(response => this.submenu = response.json());
-
-
-
-    
-    // var settings = {
-    //   "async": true,
-    //   "crossDomain": true,
-    //   "url": "https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/montarmenu",
-    //   "method": "GET",
-    //   "headers": {
-    //     "Authorization": "65325c773453",
-    //     "Cache-Control": "no-cache",
-    //     "Postman-Token": "4307ab40-e321-4426-8117-bb8d1355a7a0"
-    //   }
-    // }
-    
-    // $.ajax(settings).done(function (response) {
-    //   console.log(response);
-    // });
+    .then(
+      response => {
+        var sub = response.json().menu.menuitem;
+        this.menu = sub;
+        console.log(sub);
+      }
+    );
 
   }
 

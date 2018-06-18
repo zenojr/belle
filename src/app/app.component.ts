@@ -16,11 +16,11 @@ export class AppComponent {
 
 
   constructor(private translate: TranslateService) {
-    translate.addLangs(['en', 'pt']);
-    translate.setDefaultLang('pt');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/pt|en/) ? browserLang : 'en' );
+    this.translate.addLangs(['en', 'pt']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('pt');
+    // const browserLang = translate.getBrowserLang();
+    // translate.use(browserLang.match(/pt|en/) ? browserLang : 'en' );
   }
 
   switchLanguage(language: string) {
