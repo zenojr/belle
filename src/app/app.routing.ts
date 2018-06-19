@@ -1,3 +1,4 @@
+import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
 import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
 import { AuthGuardRouterService } from './services/auth-guard-router.service';
 import { HomeComponent } from './components/home/home.component';
@@ -24,6 +25,11 @@ const appRoutes: Routes = [
     {
         path: 'estabelecimento',
         component: EstabecimentoComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'estabelecimento/estabelecimento-details',
+        component: EstabelecimentoDetailsComponent,
         canActivate: [AuthGuardRouterService]
     }
 ];

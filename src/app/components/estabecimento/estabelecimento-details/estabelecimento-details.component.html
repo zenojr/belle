@@ -1,3 +1,79 @@
-<p>
-  estabelecimento-details works!
-</p>
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Dados Gerais
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+          <form>
+              <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Padrão</label>
+              </div>
+              <div class="form-group">
+                <label for="inputCodigo">Código</label>
+                <input type="text" class="form-control" id="inputCodigo" aria-describedby="inputCod">
+              </div>
+              <div class="form-group">
+                  <label for="inputCNPJ">CNPJ</label>
+                  <input type="number" class="form-control" id="inputCNPJ" aria-describedby="inputCNPJ" >
+              </div>
+              <div class="form-group">
+                  <label for="inputNome">Nome</label>
+                  <input type="text" class="form-control" id="inputNome" aria-describedby="inputNome">
+              </div>
+              <div class="form-group">
+                  <label for="inputRazaoSoc">Razão Social</label>
+                  <input type="text" class="form-control" id="inputRazaoSoc" aria-describedby="inputRazaoSoc" >
+              </div>
+              
+            </form>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Endereço
+          </button>
+          <span></span>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+            <form>
+                <button class="btn btn-go">Buscar Endereço</button>
+                <br>
+                
+                <div class="form-group">
+                  <label for="inputEndereco">Endereço</label>
+                  <input type="text" class="form-control" id="inputEndereco" aria-describedby="inputEndereco">
+                </div>
+                <div class="form-group">
+                    <label for="inputNumero">Número</label>
+                    <input type="number" class="form-control" id="inputNumero" aria-describedby="inputNumero" >
+                </div>
+                <div class="form-group">
+                    <label for="inputUF">UF</label>
+                    <input type="text" class="form-control" id="inputUF" aria-describedby="inputUF">
+                </div>
+                <div class="form-group">
+                    <label for="inputCEP">CEP</label>
+                    <input type="text" class="form-control" id="inputCEP" aria-describedby="inputCEP" >
+                </div>
+                <div class="form-group">
+                    <label for="inputCidade">Cidade</label>
+                    <input type="text" class="form-control" id="inputCidade" aria-describedby="inputCidade" >
+                </div>
+                
+              </form>
+        </div>
+      </div>
+    </div>
+</div>
