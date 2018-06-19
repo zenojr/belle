@@ -30,13 +30,17 @@ export function createTranslateLoader(http: HttpClient) {
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
+import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MenuPrincipalComponent
+    MenuPrincipalComponent,
+    EstabecimentoComponent,
+    EstabelecimentoDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+
 import { JwtTokenService } from './../../services/jwt-token.service';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-menu-principal',
-  templateUrl: './menu-principal.component.html',
-  styleUrls: ['./menu-principal.component.css']
+  selector: 'app-estabecimento',
+  templateUrl: './estabecimento.component.html',
+  styleUrls: ['./estabecimento.component.css']
 })
-export class MenuPrincipalComponent implements OnInit {
+export class EstabecimentoComponent implements OnInit {
 
-  menu: Array<Object>;
+  lista: Array<Object>;
   // tslint:disable-next-line:member-ordering
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
   // tslint:disable-next-line:member-ordering
-  urlModule = '/montarmenu';
+  urlModule = '/estabelecimentos';
 
   constructor( private http: Http,
                private jwtToken: JwtTokenService,
@@ -24,10 +25,10 @@ export class MenuPrincipalComponent implements OnInit {
              }
 
   ngOnInit() {
-    this.buildMenu();
+    this.buildLista();
   }
 
-  buildMenu() {
+  buildLista() {
     const requestOptions = new RequestOptions();
     requestOptions.headers = new Headers();
     requestOptions.headers.set( 'Authorization', this.jwtToken.token );
@@ -35,11 +36,19 @@ export class MenuPrincipalComponent implements OnInit {
     this.http.get(this.urlBase + this.urlModule, requestOptions).toPromise()
     .then(
       response => {
-        const sub = response.json().menu.menuitem;
-        this.menu = sub;
-        console.log(sub);
+        const list = response.json();
+        this.lista = list;
+        console.log(list);
       }
     );
   }
 
+  // .then(response => {
+  //   this.jwtToken.token =  response.json().token;
+  //   }); // guarda o token recebido pela API no localStorage e redireciona para home
+
+
+  //   const sub = response.json().menu.menuitem;
+  //       this.menu = sub;
+  //       console.log(sub);
 }
