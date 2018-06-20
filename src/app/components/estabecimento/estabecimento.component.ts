@@ -16,7 +16,7 @@ export class EstabecimentoComponent implements OnInit {
   // tslint:disable-next-line:member-ordering
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
   // tslint:disable-next-line:member-ordering
-  urlModule = '/estabelecimentos';
+  urlModule = '/estabelecimento';
 
   constructor( private http: Http,
                private jwtToken: JwtTokenService,
