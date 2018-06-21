@@ -12,9 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class MenuPrincipalComponent implements OnInit {
 
   menu: Array<Object>;
-  // tslint:disable-next-line:member-ordering
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
-  // tslint:disable-next-line:member-ordering
   urlModule = '/montarmenu';
 
   constructor( private http: Http,

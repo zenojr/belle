@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { JwtTokenService } from './services/jwt-token.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { BrowserModule } from '@angular/platform-browser';
