@@ -1,4 +1,4 @@
-<app-menu-principal></app-menu-principal>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='let item of lista, let sub of '>
+    <tr *ngFor='let item of lista'>
       <th scope="row">{{ item.cod }}</th> 
       <td>{{ item.nome }}</td>
       <td>{{ item.lograd }}</td>
@@ -23,7 +23,11 @@
       <td>{{ item.cnpj }}</td>
       <td>{{ item.tel1 }}</td>
       <td>{{ item.padrao }}</td>
-      <td><button class="btn btn-primary">Editar</button></td>
+      <td><button 
+          class="btn btn-primary"
+          routerLink='/estabelecimento-details'>
+            Editar
+          </button></td>
     </tr>
   </tbody>
 </table>

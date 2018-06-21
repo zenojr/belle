@@ -28,7 +28,7 @@ const appRoutes: Routes = [
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'estabelecimento/estabelecimento-details',
+        path: 'estabelecimento-details',
         component: EstabelecimentoDetailsComponent,
         canActivate: [AuthGuardRouterService]
     }

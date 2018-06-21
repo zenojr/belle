@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  menu: Array<Object>;
+  
 
   constructor( private http: Http,
                private jwtToken: JwtTokenService,
@@ -22,19 +22,5 @@ export class HomeComponent implements OnInit {
              }
 
   ngOnInit() {
-    this.getProducts();
   }
-  // tslint:disable-next-line:member-ordering
-  menuUrl = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0/listarmenu';
-  getProducts() {
-    let requestOptions = new RequestOptions();
-    requestOptions.headers = new Headers();
-    requestOptions.headers.set( 'Authorization', this.jwtToken.token );
-    requestOptions.headers.set('Content-type', 'application/json');
-    this.http
-    .get(this.menuUrl, requestOptions)
-    .toPromise()
-    .then(response => this.menu = response.json());
-  }
-
 }
