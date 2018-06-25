@@ -1,3 +1,4 @@
+import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
 import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
 import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
 import { AuthGuardRouterService } from './services/auth-guard-router.service';
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
         path: 'estabelecimento-details',
         component: EstabelecimentoDetailsComponent,
         canActivate: [AuthGuardRouterService]
-    }
+    },
 ];
 
 const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

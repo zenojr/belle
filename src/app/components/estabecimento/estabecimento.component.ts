@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 
 import { JwtTokenService } from './../../services/jwt-token.service';
 import { Http, RequestOptions, Headers } from '@angular/http';
@@ -21,7 +21,7 @@ export class EstabecimentoComponent implements OnInit {
   constructor( private http: Http,
                private jwtToken: JwtTokenService,
                private auth: AuthService
-             ) {
+              ) {
              }
 
   ngOnInit() {
@@ -42,13 +42,5 @@ export class EstabecimentoComponent implements OnInit {
       }
     );
   }
-
-  // .then(response => {
-  //   this.jwtToken.token =  response.json().token;
-  //   }); // guarda o token recebido pela API no localStorage e redireciona para home
-
-
-  //   const sub = response.json().menu.menuitem;
-  //       this.menu = sub;
-  //       console.log(sub);
+  
 }
