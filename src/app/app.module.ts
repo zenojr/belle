@@ -32,6 +32,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
 import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EstabelecimentoDetailsComponent } from './components/estabecimento/esta
     HomeComponent,
     MenuPrincipalComponent,
     EstabecimentoComponent,
-    EstabelecimentoDetailsComponent
+    EstabelecimentoDetailsComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

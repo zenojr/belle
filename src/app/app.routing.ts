@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 const appRoutes: Routes = [
     {
         path: 'login',
@@ -33,6 +34,12 @@ const appRoutes: Routes = [
         component: EstabelecimentoDetailsComponent,
         canActivate: [AuthGuardRouterService]
     },
+    {
+        path: 'Usuários',
+        component: UsuarioComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+
 ];
 
 const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

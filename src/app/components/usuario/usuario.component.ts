@@ -1,32 +1,29 @@
-import { Component, OnInit, Injectable, Input, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { JwtTokenService } from './../../services/jwt-token.service';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { AuthService } from '../../services/auth.service';
 
-// import { Estabelecimento } from './estabelecimento';
-
 @Component({
-  selector: 'app-estabecimento',
-  templateUrl: './estabecimento.component.html',
-  styleUrls: ['./estabecimento.component.css']
+  selector: 'app-usuario',
+  templateUrl: './usuario.component.html',
+  styleUrls: ['./usuario.component.css']
 })
-export class EstabecimentoComponent implements OnInit {
+export class UsuarioComponent implements OnInit {
 
-  lista: Array<Object>;
+  listaUser: Array<Object>;
+  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
 
-   @Output() urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
+  urlModule = '/listarusuarios';
 
-  urlModule = '/estabelecimento';
-
-  constructor( private http: Http,
-               private jwtToken: JwtTokenService,
-               private auth: AuthService
-
-              ) {
-             }
+  constructor(
+              private http: Http,
+              private jwtToken: JwtTokenService,
+              private auth: AuthService
+              ) { }
 
   ngOnInit() {
+    console.log(this.urlBase);
     this.buildLista();
   }
 
@@ -39,7 +36,7 @@ export class EstabecimentoComponent implements OnInit {
     .then(
       response => {
         const list = response.json();
-        this.lista = list;
+        this.listaUser = list;
         console.log(list);
       }
     );
