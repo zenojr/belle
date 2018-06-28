@@ -33,6 +33,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
 import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
+import { ComissaoComponent } from './components/comissao/comissao.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
     MenuPrincipalComponent,
     EstabecimentoComponent,
     EstabelecimentoDetailsComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    EspecialidadesComponent,
+    ComissaoComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,

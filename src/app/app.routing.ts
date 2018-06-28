@@ -1,3 +1,4 @@
+import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
 import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
 import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
 import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
@@ -9,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { ComissaoComponent } from './components/comissao/comissao.component';
 const appRoutes: Routes = [
     {
         path: 'login',
@@ -37,6 +39,16 @@ const appRoutes: Routes = [
     {
         path: 'Usuários',
         component: UsuarioComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'Especialidades',
+        component: EspecialidadesComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'Perfis de Comissionamento',
+        component: ComissaoComponent,
         canActivate: [AuthGuardRouterService]
     },
 

@@ -1,0 +1,32 @@
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo Comiss. Plano</th>
+      <th scope="col">Valor Comiss. Plano</th>
+      <th scope="col">Tipo Comiss. Plano 2</th>
+      <th scope="col">Valor Comiss. Plano 2</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let item of listaComissao'>
+      <th scope="row">{{ item.codPerfil }}</th> 
+      <td>{{ item.nome }}</td>
+      <td>{{ item.lbPlano }}</td>
+      <td>{{ item.valorPlano }}</td>
+      <td>{{ item.lbPlano }}</td>
+      <td>{{ item.valorPlano2 }}</td>
+
+      <td><button 
+          class="btn btn-primary"
+          routerLink='/estabelecimento-details'>
+            Editar
+          </button></td>
+    </tr>
+  </tbody>
+</table>
+
+
