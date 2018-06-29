@@ -1,3 +1,6 @@
+import { CampanhaComponent } from './components/campanha/campanha.component';
+import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
 import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
 import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
@@ -49,6 +52,21 @@ const appRoutes: Routes = [
     {
         path: 'Perfis de Comissionamento',
         component: ComissaoComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'Clientes',
+        component: ClientesComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'Profissionais Externos',
+        component: ProfExternoComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'Campanha',
+        component: CampanhaComponent,
         canActivate: [AuthGuardRouterService]
     },
 

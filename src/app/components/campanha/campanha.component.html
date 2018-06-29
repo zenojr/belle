@@ -1,0 +1,33 @@
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Status</th>
+      <th scope="col">Data/Hora Criação</th>
+      <th scope="col">Data/Hora Ult. Alt.</th>
+      <th scope="col">Usuário</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let item of listaCampanha'>
+      <th scope="row">{{ item.codCampanha }}</th> 
+      <td>{{ item.nome }}</td>
+      <td>{{ item.tipo }}</td>
+      <td>{{ item.status }}</td>
+      <td>{{ item.dtIni }}</td>
+      <td>{{ verificar }}</td>
+      <td>{{ item.dtIni }}</td>
+      <td><button 
+          class="btn btn-primary"
+          routerLink='/estabelecimento-details'>
+            Editar
+          </button></td>
+    </tr>
+  </tbody>
+</table>
+
+

@@ -1,4 +1,3 @@
-
 import { Router } from '@angular/router';
 import { JwtTokenService } from './../services/jwt-token.service';
 import { LocalStorageService } from './../services/local-storage.service';
@@ -6,6 +5,9 @@ import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import { TranslateService } from '@ngx-translate/core';
+import { Login } from './login';
+
+
 
 @Component({
   selector: 'app-login',
@@ -20,11 +22,20 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  // loginData: Login;
+
+  // user = {
+  //   user: this.loginData.user = '',
+  //   password: this.loginData.senha = '',
+  // };
+
   redirectAfterLogin = ['/home'];
 
-  constructor( private http: Http, private jwtToken: JwtTokenService, private router: Router ) {
-
-  }
+  constructor(
+              private http: Http,
+              private jwtToken: JwtTokenService,
+              private router: Router,
+              ) {}
 
   ngOnInit() {
   }

@@ -1,3 +1,56 @@
-<p>
-  clientes works!
-</p>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Cod</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Data Nasc.</th>
+      <th scope="col">Pontos</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Celular - Operadora</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Estabelecimento</th>
+      <th scope="col">Observação</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let item of listaCliente'>
+      <th scope="row">{{ item.codigo }}</th> 
+      <td>{{ item.nome }}</td>
+      <td>{{ item.datNasc }}</td>
+      <td>verificar</td>
+      <td>{{ item.idade }}</td>
+      <td>{{ item.cidade }}</td>
+      <td>{{ item.fone }}</td>
+      <td>{{ item.cel1Op }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.nom_clinica }}</td>
+      <td>{{ item.obs }}</td>
+
+      <!-- "codigo": "999",
+        "nome": "Silvana Lima Ferreira",
+        "datNasc": "08/07/1989",
+        "idade": "28",
+        "cidade": "",
+        "fone": "(11)2365-8963",
+        "email": "",
+        "nom_clinica": "",
+        "cel1Op": " - ",
+        "cel1": "",
+        "obs": "",
+        "ativo": "1",
+        "cgc": "555.666.777-88" -->
+
+      <td><button 
+          class="btn btn-primary"
+          routerLink='/estabelecimento-details'>
+            Editar
+          </button></td>
+    </tr>
+  </tbody>
+</table>
+
+

@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { JwtTokenService } from '../../services/jwt-token.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-clientes',
-  templateUrl: './clientes.component.html',
-  styleUrls: ['./clientes.component.css']
+  selector: 'app-prof-externo',
+  templateUrl: './prof-externo.component.html',
+  styleUrls: ['./prof-externo.component.css']
 })
-export class ClientesComponent implements OnInit {
-  listaCliente: Array<Object>;
-  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/Cliente/v1.0';
-  urlModule = '/listaclientes';
+export class ProfExternoComponent implements OnInit {
 
-  
+  listaProfExt: Array<Object>;
+  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
+  urlModule = '/profext';
+
 
   constructor(
               private http: Http,
@@ -30,15 +30,11 @@ export class ClientesComponent implements OnInit {
     requestOptions.headers = new Headers();
     requestOptions.headers.set( 'Authorization', this.jwtToken.token );
     requestOptions.headers.set('Content-type', 'application/json');
-    requestOptions.headers.set('usuario', 'sysadmin');
-    requestOptions.headers.set('ativo', '0');
-    requestOptions.headers.set('cnt', '0');
-    requestOptions.headers.set('lmt', '500');
     this.http.get(this.urlBase + this.urlModule, requestOptions).toPromise()
     .then(
       response => {
         const list = response.json();
-        this.listaCliente = list;
+        this.listaProfExt = list;
         console.log(list);
       }
     );

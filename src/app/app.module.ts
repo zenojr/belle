@@ -36,6 +36,8 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
 import { ComissaoComponent } from './components/comissao/comissao.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
+import { CampanhaComponent } from './components/campanha/campanha.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { ClientesComponent } from './components/clientes/clientes.component';
     UsuarioComponent,
     EspecialidadesComponent,
     ComissaoComponent,
-    ClientesComponent
+    ClientesComponent,
+    ProfExternoComponent,
+    CampanhaComponent
   ],
   imports: [
     BrowserModule,
