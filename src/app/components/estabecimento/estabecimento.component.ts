@@ -30,7 +30,6 @@ cursos: string[];
 constructor(  private http: Http,
               private jwtToken: JwtTokenService,
               private auth: AuthService,
-              private httpCli: HttpClient,
               private listaMenuService: ListaMenuService
 
             ) {
