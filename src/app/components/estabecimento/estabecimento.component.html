@@ -1,5 +1,8 @@
 
+
+<app-breadcrumb></app-breadcrumb>
 <table class="table">
+    
   <thead class="thead-dark">
     <tr>
       <th scope="col">Código</th>
@@ -23,13 +26,19 @@
       <td>{{ item.cnpj }}</td>
       <td>{{ item.tel1 }}</td>
       <td>{{ item.padrao }}</td>
-      <td><button 
+      <td>
+        <button 
           class="btn btn-primary"
-          routerLink='/estabelecimento-details' (click)='selecionaItem()'>
+          routerLink='/estabelecimento-details' [queryParams]='eventosEstab' (click)='selecionaItem([(item.cod)])'>
             Editar
-          </button></td>
+        </button>
+      </td>
     </tr>
+    
   </tbody>
 </table>
+
+
+
 
 

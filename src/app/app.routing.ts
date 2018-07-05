@@ -8,12 +8,12 @@ import { EstabecimentoComponent } from './components/estabecimento/estabecimento
 import { AuthGuardRouterService } from './services/auth-guard-router.service';
 import { HomeComponent } from './components/home/home.component';
 
-
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ComissaoComponent } from './components/comissao/comissao.component';
+
 const appRoutes: Routes = [
     {
         path: 'login',
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'Estabelecimento',
+        path: 'mdEstab',
         component: EstabecimentoComponent,
         canActivate: [AuthGuardRouterService]
     },
@@ -40,32 +40,32 @@ const appRoutes: Routes = [
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'Usuários',
+        path: 'mdUsuario',
         component: UsuarioComponent,
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'Especialidades',
+        path: 'mdEspecialidade',
         component: EspecialidadesComponent,
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'Perfis de Comissionamento',
+        path: 'mdComissao',
         component: ComissaoComponent,
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'Clientes',
+        path: 'mdCliente',
         component: ClientesComponent,
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'Profissionais Externos',
+        path: 'mdProfExt',
         component: ProfExternoComponent,
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'Campanha',
+        path: 'mdCampanha',
         component: CampanhaComponent,
         canActivate: [AuthGuardRouterService]
     },

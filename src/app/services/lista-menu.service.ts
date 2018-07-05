@@ -1,4 +1,10 @@
-export class Estabelecimento {
+// service to manipulate events of menu
+
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ListaMenuService {
+    public codEstabelecimento: any = [];
     public cod: string;
     public cnpj: string;
     public nome: string;
@@ -18,4 +24,8 @@ export class Estabelecimento {
     public relAuto: number;
     public cod_cid: number;
     public ativo: number;
+
+  constructor() { }
+
+
 }

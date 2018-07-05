@@ -1,11 +1,10 @@
+import { ListaMenuService } from './../../../services/lista-menu.service';
+
 import { AuthService } from './../../../services/auth.service';
 import { JwtTokenService } from './../../../services/jwt-token.service';
-import { Component, OnInit } from '@angular/core';
-
-import { Http, RequestOptions, Headers } from '@angular/http';
+import { Component, OnInit, Input } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
-
-
+import { Http, RequestOptions, Headers } from '@angular/http';
 
 @Component({
   selector: 'app-estabelecimento-details',
@@ -15,15 +14,19 @@ import 'rxjs/add/operator/toPromise';
 export class EstabelecimentoDetailsComponent implements OnInit {
 
   listaEstabelecimento: Array<Object>;
-
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
-
   urlModule = '/estabelecimento';
+
+  
 
   constructor(private http: Http,
               private jwtToken: JwtTokenService,
-              private auth: AuthService
-  ) { }
+              private auth: AuthService,
+              private listaMenuService: ListaMenuService
+  ) {
+    const itemSelected: any = this.listaMenuService.codEstabelecimento;
+    console.log(itemSelected);
+   }
 
   ngOnInit() {
     this.listaEstab();

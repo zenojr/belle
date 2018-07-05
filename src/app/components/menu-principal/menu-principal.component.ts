@@ -17,6 +17,8 @@ export class MenuPrincipalComponent implements OnInit {
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
   urlModule = '/montarmenu';
 
+  itemSelected: Array<Object>;
+
   constructor( private http: Http,
                private jwtToken: JwtTokenService,
                private auth: AuthService
@@ -44,6 +46,5 @@ export class MenuPrincipalComponent implements OnInit {
       }
     );
   }
-
 
 }

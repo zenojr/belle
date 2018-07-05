@@ -3,11 +3,11 @@
 class="navbar 
 navbar-expand-lg navbar-light bg-light">
   <a 
-  class="navbar-brand" 
-  routerLink="/home">
-    Belle Software
+    class="navbar-brand" 
+    routerLink="/home">
+      Belle Software
   </a>
-
+  
   <form 
   class="form-inline my-2 my-lg-0">
     <input 
@@ -61,7 +61,7 @@ class="navbar navbar-expand-lg navbar-light bg-light">
           <a 
           class="dropdown-item"
           *ngFor='let sub of item.menuitem'
-          routerLink="/{{ sub.nome }}">
+          routerLink="/{{ sub.moduloAngular }}">
             {{ sub.nome }}
           </a>
         </div>
@@ -70,4 +70,6 @@ class="navbar navbar-expand-lg navbar-light bg-light">
   </div>
 </nav>
 </div>
+
+
 

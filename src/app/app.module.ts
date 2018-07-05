@@ -1,3 +1,5 @@
+import { ListaMenuService } from './services/lista-menu.service';
+import { EditMenuService } from './services/edit-menu.service';
 import { RouterModule, Routes } from '@angular/router';
 import { JwtTokenService } from './services/jwt-token.service';
 import { LocalStorageService } from './services/local-storage.service';
@@ -38,6 +40,7 @@ import { ComissaoComponent } from './components/comissao/comissao.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
 import { CampanhaComponent } from './components/campanha/campanha.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,8 @@ import { CampanhaComponent } from './components/campanha/campanha.component';
     ComissaoComponent,
     ClientesComponent,
     ProfExternoComponent,
-    CampanhaComponent
+    CampanhaComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,9 @@ import { CampanhaComponent } from './components/campanha/campanha.component';
     LocalStorageService,
     JwtTokenService,
     AuthService,
-    AuthGuardRouterService
+    AuthGuardRouterService,
+    EditMenuService,
+    ListaMenuService
   ],
   exports: [
     CommonModule,
