@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { JwtTokenService } from './../../services/jwt-token.service';
+import { JwtTokenService } from '../../services/jwt-token.service';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { AuthService } from '../../services/auth.service';

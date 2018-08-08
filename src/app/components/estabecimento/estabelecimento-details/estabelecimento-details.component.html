@@ -1,9 +1,7 @@
 
 
-<ul *ngFor='let item of itemSelected'>
-  
 
-<div class="accordion" id="accordion">
+<div *ngFor='let item of estabelecimento' class="accordion" id="accordion">
   <!-- CARD 1 -->
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -16,28 +14,50 @@
     <!-- PARAMETROS -->
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        <form>
+        <form (ngSubmit)="onSubmit()" #dadosGerais="ngForm" >
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="padrao">
             <label class="form-check-label" for="padrao">Padrão</label>
           </div>
           <div class="form-group">
-            <label for="inputCodigo">Código</label>
-            <input type="text" class="form-control" id="inputCodigo" aria-describedby="inputCod" value="{{item.cod}}">
+            <label for="cod">Código</label>
+            <input type="text" 
+                  class="form-control" 
+                  id="cod" 
+                  name="cod" 
+                  aria-describedby="cod" 
+                  [(ngModel)] = "cod"
+                  [(ngModel)] = "item.cod">
+            
           </div>
           <div class="form-group">
-            <label for="inputCNPJ">CNPJ</label>
-            <input type="text" class="form-control" id="inputCNPJ" aria-describedby="inputCNPJ" value="{{ item.cnpj }}">
+            <label for="cnpj">CNPJ</label>
+            <input type="text" 
+                  class="form-control" 
+                  id="cnpj" 
+                  name="cnpj" 
+                  aria-describedby="cnpj"
+                  [(ngModel)] = "item.cnpj" 
+                  >
           </div>
           <div class="form-group">
             <label for="inputNome">Nome</label>
-            <input type="text" class="form-control" id="inputNome" aria-describedby="inputNome" value="{{ item.nome }}">
+            <input type="text" 
+                  class="form-control" 
+                  id="nome"
+                  name="nome" 
+                  aria-describedby="inputNome" 
+                  [(ngModel)] = "item.nome">
           </div>
 
           <div class="form-group">
             <label for="inputRazaoSoc">Razão Social</label>
             <input type="text" class="form-control" id="inputRazaoSoc" aria-describedby="inputRazaoSoc" value="{{ item.razao }}">
           </div>
+
+          <a class="btn btn-primary" (click)="saveEstab()">Salvar</a>
+          
+
         </form>
       </div>
     </div>
@@ -150,4 +170,3 @@
   <!-- CARD 4 END -->
   
 </div>
-</ul>

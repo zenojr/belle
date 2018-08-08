@@ -1,3 +1,4 @@
+import { CrudService } from './services/crud.service';
 import { ListaMenuService } from './services/lista-menu.service';
 import { EditMenuService } from './services/edit-menu.service';
 import { RouterModule, Routes } from '@angular/router';
@@ -41,6 +42,8 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
 import { CampanhaComponent } from './components/campanha/campanha.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { EstabelecimentoService } from './components/estabecimento/estabelecimento.service';
+import { UsuarioFormComponent } from './app/components/usuario/usuario-form/usuario-form.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     ClientesComponent,
     ProfExternoComponent,
     CampanhaComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    UsuarioFormComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +87,9 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     AuthService,
     AuthGuardRouterService,
     EditMenuService,
-    ListaMenuService
+    ListaMenuService,
+    CrudService,
+    EstabelecimentoService
   ],
   exports: [
     CommonModule,

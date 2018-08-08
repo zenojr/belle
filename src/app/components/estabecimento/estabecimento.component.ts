@@ -1,11 +1,6 @@
-import { ListaMenuService } from './../../services/lista-menu.service';
-import { HttpClient } from '@angular/common/http';
-import { Estabelecimento } from './estabelecimento.model';
-import { Component, OnInit, Injectable, Input, Output, EventEmitter } from '@angular/core';
-import { JwtTokenService } from './../../services/jwt-token.service';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import { AuthService } from '../../services/auth.service';
+import { EstabelecimentoService } from './estabelecimento.service';
+import { ListaMenuService } from '../../services/lista-menu.service';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-estabecimento',
@@ -17,49 +12,41 @@ export class EstabecimentoComponent implements OnInit {
 lista: Array<Object>;
 listaNova: any = [];
 
+
 eventosEstab: any;
 
-urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
 
-urlModule = '/estabelecimento';
-
-cursos: string[];
+eventos: Array<any>;
 
 
 
-constructor(  private http: Http,
-              private jwtToken: JwtTokenService,
-              private auth: AuthService,
-              private listaMenuService: ListaMenuService
+constructor(
+              private listaMenuService: ListaMenuService,
+              private estabelecimentoService: EstabelecimentoService
 
             ) {
 }
 
 ngOnInit() {
-  this.buildLista();
+  this.listar();
 }
 
-selecionaItem(event: Event) {
-  console.log(event);
-  this.listaMenuService.codEstabelecimento = event;
+selecionaItem(cod) {
+  console.log(cod);
+
+  // this.listaMenuService.codEstabelecimento = event;
 
 }
 
 
-buildLista() {
-  const requestOptions = new RequestOptions();
-  requestOptions.headers = new Headers();
-  requestOptions.headers.set( 'Authorization', this.jwtToken.token );
-  requestOptions.headers.set('Content-type', 'application/json');
-  this.http.get(this.urlBase + this.urlModule, requestOptions).toPromise()
+listar() {
+  this.estabelecimentoService.listar()
   .then(
-    response => {
-      const list = response.json();
-      this.lista = list;
-      console.log(list);
-    }
+    data => this.lista = data
   );
 }
+
+
 
 
 }

@@ -8,7 +8,7 @@ export class LocalStorageService {
   constructor() { }
 
   set(key, value) { // define a key no localStorage
-    window.localStorage[key] = value; // acessando localStorage como objt e setando a key
+    window.localStorage[key] = value; // acessando localStorage como obj e setando a key
     return this; // retornando o obj da localstorage inteiro
   }
 

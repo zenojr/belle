@@ -1,13 +1,12 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ListaMenuService } from './../../../services/lista-menu.service';
+import { Estabelecimento } from './../estabelecimento.model';
+import { ActivatedRoute } from '@angular/router';
+import { EstabelecimentoService } from './../estabelecimento.service';
 
-import { AuthService } from './../../../services/auth.service';
-import { JwtTokenService } from './../../../services/jwt-token.service';
+
+import { FormsModule } from '@angular/forms';
+import { ListaMenuService } from '../../../services/lista-menu.service';
 import { Component, OnInit } from '@angular/core';
-import 'rxjs/add/operator/toPromise';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { HttpResponse } from 'selenium-webdriver/http';
+
 
 @Component({
   selector: 'app-estabelecimento-details',
@@ -16,72 +15,42 @@ import { HttpResponse } from 'selenium-webdriver/http';
 })
 export class EstabelecimentoDetailsComponent implements OnInit {
 
-  listaEstabelecimento: Array<any>;
-  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
-  urlModule = '/estabelecimento';
-
+  listaEstabelecimento: Array<string>;
   itemSelected: any;
+  submitted = false;
+  cod: string;
+  estabelecimento: any;
+  posts: any = [];
 
-  constructor(private http: Http,
-              private jwtToken: JwtTokenService,
+  constructor(
               private listaMenuService: ListaMenuService,
-              private httpCli: HttpClient
+              private estabelecimentoService: EstabelecimentoService,
+              private activatedRoute: ActivatedRoute
               ) {
 
    }
 
+
   ngOnInit() {
-    // this.listaEstab();
-    this.estabelecimentoSelect();
-    this.listaEstabHttpCLI()
-  }
-
-  estabelecimentoSelect() {
-    this.itemSelected = this.listaMenuService.codEstabelecimento;
-    console.log(this.itemSelected);
-    console.log(this.listaEstabelecimento);
-  }
-
-  // listaEstab() {
-  //   const requestOptions = new RequestOptions();
-  //   requestOptions.headers = new Headers();
-  //   requestOptions.headers.set( 'Authorization', this.jwtToken.token );
-  //   requestOptions.headers.set('Content-type', 'application/json');
-  //   this.http.get(this.urlBase + this.urlModule, requestOptions).toPromise()
-  //   .then(
-  //     response => {
-  //       const list = response.json();
-  //       this.listaEstabelecimento = list;
-  //       console.log(list);
-  //       return list;
-  //     }
-  //   );
-  // }
-
-  listaEstabHttpCLI() {
-    this.httpCli.get
-    (this.urlBase + this.urlModule, {observe: 'response', headers: new HttpHeaders().set('Authorization', this.jwtToken.token)})
-    .toPromise()
+    this.cod = this.activatedRoute.snapshot.params.cod;
+    this.estabelecimentoService.listarPorCod(this.cod)
     .then(
-      response => {
-        const list = response.body;
-        this.listaEstabelecimento = list;
-        console.log(list);
-      }
-    )
-    .catch(err => {
-      return Promise.reject(err.error || 'Server Error!!!!');
-    });
+      data => this.estabelecimento = data
+
+    );
+
   }
 
-  // extractData(res: HttpResponse<Object>) {
-  //   const array = new Array();
-  //   let key, count = 0;
-  //   // tslint:disable-next-line:forin
-  //   for (key in res.body) {
-  //     array.push(res.body[count++]);
-  //   }
-  //   return array;
-  // }
+  saveEstab() {
+    console.log(this.estabelecimento);
+    console.log(this.estabelecimento[0]);
+    this.estabelecimentoService.gravar(this.estabelecimento[0]);
+  }
+
+
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.submitted);
+  }
 
 }

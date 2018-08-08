@@ -1,4 +1,4 @@
-import { JwtTokenService } from './../../services/jwt-token.service';
+import { JwtTokenService } from '../../services/jwt-token.service';
 import { Component, OnInit } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 

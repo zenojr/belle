@@ -1,11 +1,11 @@
 import { Router } from '@angular/router';
-import { JwtTokenService } from './../services/jwt-token.service';
-import { LocalStorageService } from './../services/local-storage.service';
+import { JwtTokenService } from '../services/jwt-token.service';
+import { LocalStorageService } from '../services/local-storage.service';
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import { TranslateService } from '@ngx-translate/core';
-import { Login } from './login';
+
 
 
 
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   constructor(
               private http: Http,
               private jwtToken: JwtTokenService,
-              private router: Router,
+              private router: Router
               ) {}
 
   ngOnInit() {
