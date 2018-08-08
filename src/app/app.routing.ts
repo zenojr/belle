@@ -1,3 +1,4 @@
+import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
 import { CampanhaComponent } from './components/campanha/campanha.component';
 import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
@@ -42,6 +43,11 @@ const appRoutes: Routes = [
     {
         path: 'mdUsuario',
         component: UsuarioComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'mdUsuario-form/:login',
+        component: UsuarioFormComponent,
         canActivate: [AuthGuardRouterService]
     },
     {

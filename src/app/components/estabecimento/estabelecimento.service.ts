@@ -16,9 +16,9 @@ export class EstabelecimentoService {
     }
   };
 
-  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/Estabelecimento/v1.0';
+  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller';
 
-  urlModule = '/estabelecimento';
+  urlModule = '/Estabelecimento/v1.0/estabelecimento';
 
   constructor(
     private jwtTokenService: JwtTokenService,

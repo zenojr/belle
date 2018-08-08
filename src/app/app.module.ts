@@ -29,7 +29,6 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -43,7 +42,8 @@ import { ProfExternoComponent } from './components/prof-externo/prof-externo.com
 import { CampanhaComponent } from './components/campanha/campanha.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { EstabelecimentoService } from './components/estabecimento/estabelecimento.service';
-import { UsuarioFormComponent } from './app/components/usuario/usuario-form/usuario-form.component';
+import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
+
 
 @NgModule({
   declarations: [

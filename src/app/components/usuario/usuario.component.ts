@@ -12,9 +12,10 @@ import { AuthService } from '../../services/auth.service';
 export class UsuarioComponent implements OnInit {
 
   listaUser: Array<Object>;
-  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/v1.0';
+  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller';
+  // https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/Login/v1.0/login
 
-  urlModule = '/listarusuarios';
+  urlModule = 'ListarUsuarios/v1.0/listarusuarios';
 
   constructor(
               private http: Http,
