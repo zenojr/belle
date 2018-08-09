@@ -20,27 +20,6 @@ export class EstabelecimentoService {
 
   urlModule = '/Estabelecimento/v1.0/estabelecimento';
 
-  estabelecimento: Estabelecimento = {
-    cod: null,
-    cnpj: null,
-    nome: null,
-    razao: null,
-    lograd: null,
-    num: null,
-    uf: null,
-    cidade: null,
-    cep: null,
-    email: null,
-    tel1: null,
-    tel2: null,
-    fax: null,
-    contato: null,
-    padrao: null,
-    movEstoque: null,
-    relAuto: null,
-    cod_cid: null,
-    ativo: null
-  };
 
   constructor(
     private jwtTokenService: JwtTokenService,

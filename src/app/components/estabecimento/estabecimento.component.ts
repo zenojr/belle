@@ -1,8 +1,7 @@
-
+import { Estabelecimento } from './estabelecimento.model';
 import { EstabelecimentoService } from './estabelecimento.service';
 import { ListaMenuService } from '../../services/lista-menu.service';
 import { Component, OnInit, Input} from '@angular/core';
-
 
 @Component({
   selector: 'app-estabecimento',
@@ -11,17 +10,10 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class EstabecimentoComponent implements OnInit {
 
-lista: Array<Object>;
+estabelecimento: Estabelecimento;
 listaNova: any = [];
-
-
-
 eventosEstab: any;
-
-
 eventos: Array<any>;
-
-
 
 constructor(
               private listaMenuService: ListaMenuService,
@@ -41,15 +33,11 @@ selecionaItem(cod) {
 
 }
 
-
 listar() {
   this.estabelecimentoService.listar()
   .then(
-    data => this.lista = data
+    data => this.estabelecimento = data
   );
 }
-
-
-
 
 }

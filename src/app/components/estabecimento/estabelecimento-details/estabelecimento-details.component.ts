@@ -2,7 +2,6 @@ import { Estabelecimento } from './../estabelecimento.model';
 import { ActivatedRoute } from '@angular/router';
 import { EstabelecimentoService } from './../estabelecimento.service';
 
-
 import { FormsModule } from '@angular/forms';
 import { ListaMenuService } from '../../../services/lista-menu.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,7 +18,7 @@ export class EstabelecimentoDetailsComponent implements OnInit {
   itemSelected: any;
   submitted = false;
   cod: string;
-  estabelecimento: any;
+  estabelecimento: Estabelecimento;
   posts: any = [];
 
   constructor(
@@ -27,24 +26,21 @@ export class EstabelecimentoDetailsComponent implements OnInit {
               private estabelecimentoService: EstabelecimentoService,
               private activatedRoute: ActivatedRoute
               ) {
-
-   }
-
+  }
 
   ngOnInit() {
     this.cod = this.activatedRoute.snapshot.params.cod;
     this.estabelecimentoService.listarPorCod(this.cod)
     .then(
       data => this.estabelecimento = data
-
     );
 
   }
 
   saveEstab() {
     console.log(this.estabelecimento);
-    console.log(this.estabelecimento[0]);
-    this.estabelecimentoService.gravar(this.estabelecimento[0]);
+    console.log(this.estabelecimento[this.cod]);
+    this.estabelecimentoService.gravar(this.estabelecimento[this.cod]);
   }
 
 
