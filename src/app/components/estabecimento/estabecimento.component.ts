@@ -1,6 +1,8 @@
+
 import { EstabelecimentoService } from './estabelecimento.service';
 import { ListaMenuService } from '../../services/lista-menu.service';
 import { Component, OnInit, Input} from '@angular/core';
+
 
 @Component({
   selector: 'app-estabecimento',
@@ -11,6 +13,7 @@ export class EstabecimentoComponent implements OnInit {
 
 lista: Array<Object>;
 listaNova: any = [];
+
 
 
 eventosEstab: any;

@@ -1,3 +1,4 @@
+import { Usuario } from './usuario.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { JwtTokenService } from '../../services/jwt-token.service';
 import { Http, RequestOptions, Headers } from '@angular/http';
@@ -15,12 +16,24 @@ export class UsuarioComponent implements OnInit {
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller';
   // https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/Login/v1.0/login
 
-  urlModule = 'ListarUsuarios/v1.0/listarusuarios';
+  urlModule = '/Usuario/v1.0/listarusuarios';
+
+  usuario: Usuario = {
+    login: null,
+    nome: null,
+    email: null,
+    fone: null,
+    permAgendar: null,
+    ativo: null,
+    lbAtivo: null,
+    cor: null,
+    senha: null
+  };
 
   constructor(
               private http: Http,
               private jwtToken: JwtTokenService,
-              private auth: AuthService
+              private auth: AuthService,
               ) { }
 
   ngOnInit() {
