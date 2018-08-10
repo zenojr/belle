@@ -7,7 +7,7 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
 
 import { EstabelecimentoDetailsComponent } from './components/estabelecimento/estabelecimento-details/estabelecimento-details.component';
-import { EstabecimentoComponent } from './components/estabelecimento/estabelecimento.component';
+import { EstabelecimentoComponent } from './components/estabelecimento/estabelecimento.component';
 import { AuthGuardRouterService } from './services/auth-guard-router.service';
 import { HomeComponent } from './components/home/home.component';
 
@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'mdEstab',
-        component: EstabecimentoComponent,
+        component: EstabelecimentoComponent,
         canActivate: [AuthGuardRouterService]
     },
     {

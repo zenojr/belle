@@ -32,7 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { EstabecimentoComponent } from './components/estabelecimento/estabelecimento.component';
+import { EstabelecimentoComponent } from './components/estabelecimento/estabelecimento.component';
 import { EstabelecimentoDetailsComponent } from './components/estabelecimento/estabelecimento-details/estabelecimento-details.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
@@ -52,7 +52,7 @@ import { EstabelecimentoCadastroComponent } from './components/estabelecimento/e
     LoginComponent,
     HomeComponent,
     MenuPrincipalComponent,
-    EstabecimentoComponent,
+    EstabelecimentoComponent,
     EstabelecimentoDetailsComponent,
     UsuarioComponent,
     EspecialidadesComponent,

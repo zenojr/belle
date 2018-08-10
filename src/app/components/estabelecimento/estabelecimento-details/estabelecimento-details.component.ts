@@ -14,15 +14,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstabelecimentoDetailsComponent implements OnInit {
 
-  listaEstabelecimento: Array<string>;
-  itemSelected: any;
   submitted = false;
   cod: string;
   estabelecimento: Estabelecimento[];
-  posts: any = [];
 
   constructor(
-              private listaMenuService: ListaMenuService,
               private estabelecimentoService: EstabelecimentoService,
               private activatedRoute: ActivatedRoute
               ) {
@@ -34,13 +30,14 @@ export class EstabelecimentoDetailsComponent implements OnInit {
     .then(
       data => this.estabelecimento = data
     );
+    console.log(this.cod);
 
   }
 
   saveEstab() {
+    console.log('here save this sheet');
     console.log(this.estabelecimento);
-    console.log(this.estabelecimento[this.cod]);
-    this.estabelecimentoService.gravar(this.estabelecimento[this.cod]);
+    this.estabelecimentoService.gravar(this.estabelecimento[0]); // verificar melhor maneira de passar o parametro para sobre
   }
 
 

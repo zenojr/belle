@@ -3,14 +3,12 @@ import { EstabelecimentoService } from './estabelecimento.service';
 import { Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-estabecimento',
-  templateUrl: './estabecimento.component.html',
-  styleUrls: ['./estabecimento.component.css']
+  selector: 'app-estabelecimento',
+  templateUrl: './estabelecimento.component.html',
+  styleUrls: ['./estabelecimento.component.css']
 })
-export class EstabecimentoComponent implements OnInit {
-
+export class EstabelecimentoComponent implements OnInit {
 estabelecimento: Estabelecimento[];
-
 constructor(
   private estabelecimentoService: EstabelecimentoService
             ) {}
