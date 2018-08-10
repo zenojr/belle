@@ -1,11 +1,13 @@
+import { EstabelecimentoCadastroComponent } from './components/estabelecimento/estabelecimento-cadastro/estabelecimento-cadastro.component';
+
 import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
 import { CampanhaComponent } from './components/campanha/campanha.component';
 import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
-import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
-import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
-import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
+
+import { EstabelecimentoDetailsComponent } from './components/estabelecimento/estabelecimento-details/estabelecimento-details.component';
+import { EstabecimentoComponent } from './components/estabelecimento/estabelecimento.component';
 import { AuthGuardRouterService } from './services/auth-guard-router.service';
 import { HomeComponent } from './components/home/home.component';
 
@@ -33,6 +35,11 @@ const appRoutes: Routes = [
     {
         path: 'mdEstab',
         component: EstabecimentoComponent,
+        canActivate: [AuthGuardRouterService]
+    },
+    {
+        path: 'estabelecimento-cadastrar',
+        component: EstabelecimentoCadastroComponent,
         canActivate: [AuthGuardRouterService]
     },
     {

@@ -1,6 +1,6 @@
-import { Estabelecimento } from './../estabelecimento.model';
+import { Estabelecimento } from '../estabelecimento.model';
 import { ActivatedRoute } from '@angular/router';
-import { EstabelecimentoService } from './../estabelecimento.service';
+import { EstabelecimentoService } from '../estabelecimento.service';
 
 import { FormsModule } from '@angular/forms';
 import { ListaMenuService } from '../../../services/lista-menu.service';
@@ -18,7 +18,7 @@ export class EstabelecimentoDetailsComponent implements OnInit {
   itemSelected: any;
   submitted = false;
   cod: string;
-  estabelecimento: Estabelecimento;
+  estabelecimento: Estabelecimento[];
   posts: any = [];
 
   constructor(

@@ -1,7 +1,6 @@
 import { Estabelecimento } from './estabelecimento.model';
 import { EstabelecimentoService } from './estabelecimento.service';
-import { ListaMenuService } from '../../services/lista-menu.service';
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-estabecimento',
@@ -10,27 +9,14 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class EstabecimentoComponent implements OnInit {
 
-estabelecimento: Estabelecimento;
-listaNova: any = [];
-eventosEstab: any;
-eventos: Array<any>;
+estabelecimento: Estabelecimento[];
 
 constructor(
-              private listaMenuService: ListaMenuService,
-              private estabelecimentoService: EstabelecimentoService
-
-            ) {
-}
+  private estabelecimentoService: EstabelecimentoService
+            ) {}
 
 ngOnInit() {
   this.listar();
-}
-
-selecionaItem(cod) {
-  console.log(cod);
-
-  // this.listaMenuService.codEstabelecimento = event;
-
 }
 
 listar() {

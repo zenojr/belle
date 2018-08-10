@@ -32,8 +32,8 @@ export function createTranslateLoader(http: HttpClient) {
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { EstabecimentoComponent } from './components/estabecimento/estabecimento.component';
-import { EstabelecimentoDetailsComponent } from './components/estabecimento/estabelecimento-details/estabelecimento-details.component';
+import { EstabecimentoComponent } from './components/estabelecimento/estabelecimento.component';
+import { EstabelecimentoDetailsComponent } from './components/estabelecimento/estabelecimento-details/estabelecimento-details.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
 import { ComissaoComponent } from './components/comissao/comissao.component';
@@ -41,8 +41,9 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
 import { CampanhaComponent } from './components/campanha/campanha.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
-import { EstabelecimentoService } from './components/estabecimento/estabelecimento.service';
+import { EstabelecimentoService } from './components/estabelecimento/estabelecimento.service';
 import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
+import { EstabelecimentoCadastroComponent } from './components/estabelecimento/estabelecimento-cadastro/estabelecimento-cadastro.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-
     ProfExternoComponent,
     CampanhaComponent,
     BreadcrumbComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    EstabelecimentoCadastroComponent
   ],
   imports: [
     BrowserModule,
