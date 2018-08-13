@@ -1,3 +1,4 @@
+import { ClientesService } from './components/clientes/clientes.service';
 import { CrudService } from './services/crud.service';
 import { ListaMenuService } from './services/lista-menu.service';
 import { EditMenuService } from './services/edit-menu.service';
@@ -44,6 +45,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { EstabelecimentoService } from './components/estabelecimento/estabelecimento.service';
 import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
 import { EstabelecimentoCadastroComponent } from './components/estabelecimento/estabelecimento-cadastro/estabelecimento-cadastro.component';
+import { ClientesDetailsComponent } from './components/clientes/clientes-details/clientes-details.component';
+import { UsuarioService } from './components/usuario/usuario.service';
 
 
 @NgModule({
@@ -62,7 +65,8 @@ import { EstabelecimentoCadastroComponent } from './components/estabelecimento/e
     CampanhaComponent,
     BreadcrumbComponent,
     UsuarioFormComponent,
-    EstabelecimentoCadastroComponent
+    EstabelecimentoCadastroComponent,
+    ClientesDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +95,8 @@ import { EstabelecimentoCadastroComponent } from './components/estabelecimento/e
     EditMenuService,
     ListaMenuService,
     CrudService,
-    EstabelecimentoService
+    EstabelecimentoService,
+    UsuarioService
   ],
   exports: [
     CommonModule,

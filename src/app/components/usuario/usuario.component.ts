@@ -1,9 +1,7 @@
+import { UsuarioService } from './usuario.service';
 import { Usuario } from './usuario.model';
-import { Component, OnInit, Input } from '@angular/core';
-import { JwtTokenService } from '../../services/jwt-token.service';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import { AuthService } from '../../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-usuario',
@@ -12,47 +10,20 @@ import { AuthService } from '../../services/auth.service';
 })
 export class UsuarioComponent implements OnInit {
 
-  listaUser: Array<Object>;
-  urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller';
-  // https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller/Login/v1.0/login
-
-  urlModule = '/Usuario/v1.0/listarusuarios';
-
-  usuario: Usuario = {
-    login: null,
-    nome: null,
-    email: null,
-    fone: null,
-    permAgendar: null,
-    ativo: null,
-    lbAtivo: null,
-    cor: null,
-    senha: null
-  };
+  usuario: Usuario[];
 
   constructor(
-              private http: Http,
-              private jwtToken: JwtTokenService,
-              private auth: AuthService,
+              private usuarioService: UsuarioService
               ) { }
 
   ngOnInit() {
-    console.log(this.urlBase);
-    this.buildLista();
+    this.listar();
   }
 
-  buildLista() {
-    const requestOptions = new RequestOptions();
-    requestOptions.headers = new Headers();
-    requestOptions.headers.set( 'Authorization', this.jwtToken.token );
-    requestOptions.headers.set('Content-type', 'application/json');
-    this.http.get(this.urlBase + this.urlModule, requestOptions).toPromise()
+  listar() {
+    this.usuarioService.listar()
     .then(
-      response => {
-        const list = response.json();
-        this.listaUser = list;
-        console.log(list);
-      }
+      data => this.usuario = data
     );
   }
 
