@@ -41,7 +41,7 @@ export class EstabelecimentoService {
   }
 
   gravar(estabelecimento: any): Promise<any> {
-    estabelecimento['ope'] = 'A'; // A par ageral  e I inclusão
+    estabelecimento['ope'] = 'A'; // A para geral  e I inclusão
     return this.http
     .post<any>(this.urlBase + this.urlModule, estabelecimento, this.httpOptions).toPromise();
   }

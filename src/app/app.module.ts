@@ -1,5 +1,4 @@
 import { ClientesService } from './components/clientes/clientes.service';
-import { CrudService } from './services/crud.service';
 import { ListaMenuService } from './services/lista-menu.service';
 import { EditMenuService } from './services/edit-menu.service';
 import { RouterModule, Routes } from '@angular/router';
@@ -94,7 +93,6 @@ import { UsuarioService } from './components/usuario/usuario.service';
     AuthGuardRouterService,
     EditMenuService,
     ListaMenuService,
-    CrudService,
     EstabelecimentoService,
     UsuarioService
   ],

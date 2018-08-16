@@ -1,4 +1,3 @@
-
 export class Estabelecimento {
     public estab: string;
     public cod: string;
@@ -17,10 +16,9 @@ export class Estabelecimento {
     public contato: string;
     public padrao: string;
     public movEstoque: number;
-    public relAuto: number;
-    public cod_cid: number;
+    public relAuto: string;
+    public cod_cid: string;
     public ativo: number;
-
 
     constructor () {}
 }

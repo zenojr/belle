@@ -12,15 +12,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./estabelecimento-details.component.css']
 })
 export class EstabelecimentoDetailsComponent implements OnInit {
-  form: FormGroup;
+
   submitted = false;
   cod: string;
   estabelecimento: Estabelecimento;
 
   constructor(
     private estabelecimentoService: EstabelecimentoService,
-    private activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -32,7 +31,10 @@ export class EstabelecimentoDetailsComponent implements OnInit {
     } else {
       this.estabelecimentoService.listarPorCod(this.cod)
       .then(
-        data => this.estabelecimento = data[0]
+        data => {
+          this.estabelecimento = data[0];
+
+        }
       );
       console.log(this.cod);
     }
