@@ -1,3 +1,6 @@
+import { Usuario } from './../usuario.model';
+import { ActivatedRoute } from '@angular/router';
+import { UsuarioService } from './../usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioFormComponent implements OnInit {
 
-  constructor() { }
+  submited =  false;
+  login: string;
+  usuario: Usuario[];
+
+  constructor(
+    private usuarioService: UsuarioService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
   }

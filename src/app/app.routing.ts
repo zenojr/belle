@@ -39,7 +39,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'estabelecimento-cadastrar',
-        component: EstabelecimentoCadastroComponent,
+        component: EstabelecimentoDetailsComponent,
         canActivate: [AuthGuardRouterService]
     },
     {
@@ -53,7 +53,7 @@ const appRoutes: Routes = [
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'mdUsuario-form/:login',
+        path: 'mdUsuario-form',
         component: UsuarioFormComponent,
         canActivate: [AuthGuardRouterService]
     },

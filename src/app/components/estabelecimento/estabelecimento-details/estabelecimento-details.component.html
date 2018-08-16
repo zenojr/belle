@@ -1,7 +1,7 @@
 
 
-
-<div *ngFor='let item of estabelecimento' class="accordion" id="accordion">
+<form (ngSubmit)="onSubmit()" #dadosGerais="ngForm" >
+<div *ngIf='estabelecimento' class="accordion" id="accordion">
   <!-- CARD 1 -->
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -14,19 +14,19 @@
     <!-- PARAMETROS -->
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        <form (ngSubmit)="onSubmit()" #dadosGerais="ngForm" >
+        
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="padrao">
             <label class="form-check-label" for="padrao">Padrão</label>
           </div>
           <div class="form-group">
             <label for="inputCod">Cod</label>
-            <input disabled='true' type="text" 
+            <input [readonly]="cod" type="text" 
                   class="form-control" 
-                  id="cod"
-                  name="cod" 
+                  id="estab"
+                  name="estab" 
                   aria-describedby="inputCod" 
-                  [(ngModel)] = "item.cod">
+                  [(ngModel)] = "estabelecimento.estab">
           </div>
           <div class="form-group">
             <label for="cnpj">CNPJ</label>
@@ -35,7 +35,7 @@
                   id="cnpj" 
                   name="cnpj" 
                   aria-describedby="cnpj"
-                  [(ngModel)] = "item.cnpj" 
+                  [(ngModel)] = "estabelecimento.cnpj" 
                   >
           </div>
           <div class="form-group">
@@ -45,18 +45,17 @@
                   id="nome"
                   name="nome" 
                   aria-describedby="inputNome" 
-                  [(ngModel)] = "item.nome">
+                  [(ngModel)] = "estabelecimento.nome">
           </div>
 
           <div class="form-group">
             <label for="inputRazaoSoc">Razão Social</label>
-            <input type="text" class="form-control" id="inputRazaoSoc" aria-describedby="inputRazaoSoc" value="{{ item.razao }}">
+            <input type="text" class="form-control" id="inputRazaoSoc" aria-describedby="inputRazaoSoc" value="{{ estabelecimento.razao }}">
           </div>
 
-          <a class="btn btn-primary" (click)="saveEstab()">Salvar</a>
+          
           
 
-        </form>
       </div>
     </div>
   </div>
@@ -74,32 +73,32 @@
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
-        <form>
+        
           <button class="btn btn-go">Buscar Endereço</button>
           <br>
           
           <div class="form-group">
             <label for="inputEndereco">Endereço</label>
-            <input type="text" class="form-control" id="inputEndereco" aria-describedby="inputEndereco" value="{{ item.lograd }}">
+            <input type="text" class="form-control" id="inputEndereco" aria-describedby="inputEndereco" value="{{ estabelecimento.lograd }}">
           </div>
           <div class="form-group">
             <label for="inputNumero">Número</label>
-            <input type="number" class="form-control" id="inputNumero" aria-describedby="inputNumero" value="{{ item.num }}">
+            <input type="number" class="form-control" id="inputNumero" aria-describedby="inputNumero" value="{{ estabelecimento.num }}">
           </div>
           <div class="form-group">
             <label for="inputUF">UF</label>
-            <input type="text" class="form-control" id="inputUF" aria-describedby="inputUF" value="{{ item.uf }}">
+            <input type="text" class="form-control" id="inputUF" aria-describedby="inputUF" value="{{ estabelecimento.uf }}">
           </div>
           <div class="form-group">
             <label for="inputCEP">CEP</label>
-            <input type="text" class="form-control" id="inputCEP" aria-describedby="inputCEP" value="{{ item.cep }}">
+            <input type="text" class="form-control" id="inputCEP" aria-describedby="inputCEP" value="{{ estabelecimento.cep }}">
           </div>
           <div class="form-group">
             <label for="inputCidade">Cidade</label>
-            <input type="text" class="form-control" id="inputCidade" aria-describedby="inputCidade" value="{{ item.cidade }}">
+            <input type="text" class="form-control" id="inputCidade" aria-describedby="inputCidade" value="{{ estabelecimento.cidade }}">
           </div>
           
-        </form>
+        
       </div>
     </div>
   </div>
@@ -117,24 +116,24 @@
       <!-- PARAMETROS -->
       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
         <div class="card-body">
-          <form>
+          
             <div class="form-group">
               <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail" value="{{ item.email }}">
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail" value="{{ estabelecimento.email }}">
             </div>
             <div class="form-group">
               <label for="inputTelefone1">Telefone 1</label>
-              <input type="tel" class="form-control" id="inputTelefone1" aria-describedby="inputTelefone1" value="{{ item.tel1 }}">
+              <input type="tel" class="form-control" id="inputTelefone1" aria-describedby="inputTelefone1" value="{{ estabelecimento.tel1 }}">
             </div>
             <div class="form-group">
                 <label for="inputTelefone2">Telefone 2</label>
-                <input type="tel" class="form-control" id="inputTelefone2" aria-describedby="inputTelefone2" value="{{ item.tel2 }}">
+                <input type="tel" class="form-control" id="inputTelefone2" aria-describedby="inputTelefone2" value="{{ estabelecimento.tel2 }}">
             </div>
             <div class="form-group">
               <label for="inputContat"o>Contato</label>
-              <input type="text" class="form-control" id="inputContat" aria-describedby="inputContat" value="{{ item.contato }}">
+              <input type="text" class="form-control" id="inputContat" aria-describedby="inputContat" value="{{ estabelecimento.contato }}">
             </div>
-          </form>
+          
         </div>
       </div>
   </div>
@@ -152,7 +151,7 @@
       <!-- PARAMETROS -->
       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
         <div class="card-body">
-          <form>
+          
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="CheckConfig">
               <label class="form-check-label" for="CheckConfig">Movimentar estoques a partir dos procedimentos</label>
@@ -161,10 +160,13 @@
                 <input type="checkbox" class="form-check-input" id="CheckConfig">
                 <label class="form-check-label" for="CheckConfig">Relacionar automaticamente os usúarios</label>
               </div>
-          </form>
+          
         </div>
       </div>
   </div>
   <!-- CARD 4 END -->
-  
+  <div>
+    <a class="btn btn-primary" (click)="saveEstab()">Salvar</a>
+  </div>
 </div>
+</form>

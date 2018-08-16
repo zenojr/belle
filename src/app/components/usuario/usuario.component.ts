@@ -25,6 +25,7 @@ export class UsuarioComponent implements OnInit {
     .then(
       data => this.usuario = data
     );
+    return this.usuario;
   }
 
 }

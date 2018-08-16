@@ -1,172 +1,156 @@
 
 
-
-<div *ngFor='let item of estabelecimento' class="accordion" id="accordion">
-  <!-- CARD 1 -->
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Dados Gerais
-        </button>
-      </h5>
+<form (ngSubmit)="onSubmit()" #dadosGerais="ngForm" >
+  <div class="accordion" id="accordion">
+    <!-- CARD 1 -->
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Dados Básicos
+          </button>
+        </h5>
+      </div>
+      <!-- PARAMETROS -->
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          
+            <div class="form-group">
+              <label for="login">Login</label>
+              <input disabled='true' type="text" 
+                    class="form-control" 
+                    id="login"
+                    name="login" 
+                    aria-describedby="login">
+            </div>
+            <div class="form-group">
+              <label for="nome">nome</label>
+              <input type="text" 
+                    class="form-control" 
+                    id="nome" 
+                    name="nome" 
+                    aria-describedby="nome">
+            </div>
+            <div class="form-group">
+              <label for="cpf">cpf</label>
+              <input type="text" 
+                    class="form-control" 
+                    id="cpf"
+                    name="cpf" 
+                    aria-describedby="cpf">
+            </div>
+        </div>
+      </div>
     </div>
-    <!-- PARAMETROS -->
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        <form (ngSubmit)="onSubmit()" #dadosGerais="ngForm" >
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="padrao">
-            <label class="form-check-label" for="padrao">Padrão</label>
+    <!-- CARD 1 END -->
+  
+    <!-- CARD 2  -->
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Endereço
+          </button>
+          <span></span>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          
+            <button class="btn btn-go">Buscar Endereço</button>
+            <br>
+            
+            <div class="form-group">
+              <label for="inputEndereco">Endereço</label>
+              <input type="text" 
+                class="form-control" 
+                id="inputEndereco" 
+                aria-describedby="inputEndereco">
+            </div>
+      
+            <div class="form-group">
+              <label for="uf">UF</label>
+              <input type="text" 
+                class="form-control" 
+                id="uf" 
+                aria-describedby="uf">
+            </div>
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input type="text" 
+                class="form-control" 
+                id="cidade" aria-describedby="cidade">
+            </div>
+            <div class="form-group">
+              <label for="bairro">Bairro</label>
+              <input type="text" class="form-control" id="bairro" aria-describedby="bairro">
+            </div>
+            
+          
+        </div>
+      </div>
+    </div>
+    <!-- CARD 2 END -->
+  
+    <!-- CARD 3  -->
+    <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Contato
+          </button>
+          </h5>
+        </div>
+        <!-- PARAMETROS -->
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="email">
+              </div>
+              <div class="form-group">
+                <label for="fone">Telefone</label>
+                <input type="tel" class="form-control" id="fone" aria-describedby="fone">
+              </div>
+              <div class="form-group">
+                  <label for="celular">Celular</label>
+                  <input type="tel" class="form-control" id="celular" aria-describedby="celular">
+              </div>
           </div>
-          <div class="form-group">
-            <label for="cod">Código</label>
-            <input type="text" 
-                  class="form-control" 
-                  id="cod" 
-                  name="cod" 
-                  aria-describedby="cod" 
-                  [(ngModel)] = "cod"
-                  [(ngModel)] = "item.cod">
+        </div>
+    </div>
+    <!-- CARD 3 END -->
+  
+    <!-- CARD 4 -->
+    <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            Parâmetros
+          </button>
+          </h5>
+        </div>
+        <!-- PARAMETROS -->
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body">
+            
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="CheckConfig">
+                <label class="form-check-label" for="CheckConfig">Movimentar estoques a partir dos procedimentos</label>
+              </div>
+              <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="CheckConfig">
+                  <label class="form-check-label" for="CheckConfig">Relacionar automaticamente os usúarios</label>
+                </div>
             
           </div>
-          <div class="form-group">
-            <label for="cnpj">CNPJ</label>
-            <input type="text" 
-                  class="form-control" 
-                  id="cnpj" 
-                  name="cnpj" 
-                  aria-describedby="cnpj"
-                  [(ngModel)] = "item.cnpj" 
-                  >
-          </div>
-          <div class="form-group">
-            <label for="inputNome">Nome</label>
-            <input type="text" 
-                  class="form-control" 
-                  id="nome"
-                  name="nome" 
-                  aria-describedby="inputNome" 
-                  [(ngModel)] = "item.nome">
-          </div>
-
-          <div class="form-group">
-            <label for="inputRazaoSoc">Razão Social</label>
-            <input type="text" class="form-control" id="inputRazaoSoc" aria-describedby="inputRazaoSoc" value="{{ item.razao }}">
-          </div>
-
-          <a class="btn btn-primary" (click)="saveEstab()">Salvar</a>
-          
-
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- CARD 1 END -->
-
-  <!-- CARD 2  -->
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          Endereço
-        </button>
-        <span></span>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        <form>
-          <button class="btn btn-go">Buscar Endereço</button>
-          <br>
-          
-          <div class="form-group">
-            <label for="inputEndereco">Endereço</label>
-            <input type="text" class="form-control" id="inputEndereco" aria-describedby="inputEndereco" value="{{ item.lograd }}">
-          </div>
-          <div class="form-group">
-            <label for="inputNumero">Número</label>
-            <input type="number" class="form-control" id="inputNumero" aria-describedby="inputNumero" value="{{ item.num }}">
-          </div>
-          <div class="form-group">
-            <label for="inputUF">UF</label>
-            <input type="text" class="form-control" id="inputUF" aria-describedby="inputUF" value="{{ item.uf }}">
-          </div>
-          <div class="form-group">
-            <label for="inputCEP">CEP</label>
-            <input type="text" class="form-control" id="inputCEP" aria-describedby="inputCEP" value="{{ item.cep }}">
-          </div>
-          <div class="form-group">
-            <label for="inputCidade">Cidade</label>
-            <input type="text" class="form-control" id="inputCidade" aria-describedby="inputCidade" value="{{ item.cidade }}">
-          </div>
-          
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- CARD 2 END -->
-
-  <!-- CARD 3  -->
-  <div class="card">
-      <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          Contato
-        </button>
-        </h5>
-      </div>
-      <!-- PARAMETROS -->
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-        <div class="card-body">
-          <form>
-            <div class="form-group">
-              <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail" value="{{ item.email }}">
-            </div>
-            <div class="form-group">
-              <label for="inputTelefone1">Telefone 1</label>
-              <input type="tel" class="form-control" id="inputTelefone1" aria-describedby="inputTelefone1" value="{{ item.tel1 }}">
-            </div>
-            <div class="form-group">
-                <label for="inputTelefone2">Telefone 2</label>
-                <input type="tel" class="form-control" id="inputTelefone2" aria-describedby="inputTelefone2" value="{{ item.tel2 }}">
-            </div>
-            <div class="form-group">
-              <label for="inputContat"o>Contato</label>
-              <input type="text" class="form-control" id="inputContat" aria-describedby="inputContat" value="{{ item.contato }}">
-            </div>
-          </form>
         </div>
-      </div>
+    </div>
+    <!-- CARD 4 END -->
+    <div>
+      <a class="btn btn-primary" (click)="saveEstab()">Salvar</a>
+    </div>
   </div>
-  <!-- CARD 3 END -->
-
-  <!-- CARD 4 -->
-  <div class="card">
-      <div class="card-header" id="headingFour">
-        <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-          Configurações
-        </button>
-        </h5>
-      </div>
-      <!-- PARAMETROS -->
-      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-          <form>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="CheckConfig">
-              <label class="form-check-label" for="CheckConfig">Movimentar estoques a partir dos procedimentos</label>
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="CheckConfig">
-                <label class="form-check-label" for="CheckConfig">Relacionar automaticamente os usúarios</label>
-              </div>
-          </form>
-        </div>
-      </div>
-  </div>
-  <!-- CARD 4 END -->
+  </form>
   
-</div>

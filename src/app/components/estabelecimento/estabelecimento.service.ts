@@ -16,11 +16,8 @@ export class EstabelecimentoService {
     }
   };
 
-
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller';
-
   urlModule = '/Estabelecimento/v1.0/estabelecimento';
-
 
   constructor(
     private jwtTokenService: JwtTokenService,
@@ -30,19 +27,21 @@ export class EstabelecimentoService {
    }
 
    listar(): Promise<any> {
+    console.log('listar sem cod');
+    delete this.httpOptions.headers['filtro'];
     return this.http
     .get<any>(this.urlBase + this.urlModule, this.httpOptions).toPromise();
   }
 
   listarPorCod(cod: string): Promise<any> {
-    const httpOptions = this.httpOptions;
-    httpOptions.headers['filtro'] = cod;
+    console.log('listar cod');
+    this.httpOptions.headers['filtro'] = cod;
     return this.http
-    .get<any>(this.urlBase + this.urlModule, httpOptions).toPromise();
+    .get<any>(this.urlBase + this.urlModule, this.httpOptions).toPromise();
   }
 
   gravar(estabelecimento: any): Promise<any> {
-    estabelecimento['ope'] = 'A';
+    estabelecimento['ope'] = 'A'; // A par ageral  e I inclusão
     return this.http
     .post<any>(this.urlBase + this.urlModule, estabelecimento, this.httpOptions).toPromise();
   }
