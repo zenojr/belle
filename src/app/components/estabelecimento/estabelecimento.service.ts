@@ -45,5 +45,5 @@ export class EstabelecimentoService {
     return this.http
     .post<any>(this.urlBase + this.urlModule, estabelecimento, this.httpOptions).toPromise();
   }
-
+ 
 }
