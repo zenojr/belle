@@ -1,9 +1,8 @@
 <!-- verificar campos para gravação junto ao Iverson -ver erros no log da aplicação- -->
 
-<form (ngSubmit) = "onSubmit()" 
-      #dadosGerais = "ngForm" >
+<form [formGroup]="form" *ngIf = 'estabelecimento' (ngSubmit) = "onSubmit()" #dadosGerais = "ngForm" >
 
-  <div  *ngIf = 'estabelecimento'
+  <div  
         class = "accordion"
         id = "accordion">
 
@@ -46,7 +45,7 @@
                       type = "text" 
                       class = "form-control" 
                       id = "estab"
-                      name = "estab" 
+                      formControlName = "estab" 
                       aria-describedby = "inputCod" 
                       [(ngModel)]  =  "estabelecimento.estab">
             </div>
@@ -56,7 +55,7 @@
               <input  type = "text" 
                       class = "form-control" 
                       id = "cnpj" 
-                      name = "cnpj" 
+                      formControlName = "cnpj" 
                       aria-describedby = "cnpj"
                       [(ngModel)] = "estabelecimento.cnpj">
             </div>
@@ -66,17 +65,18 @@
               <input  type = "text" 
                       class = "form-control" 
                       id = "nome"
-                      name = "nome" 
+                      formControlName = "nome" 
                       aria-describedby = "nome" 
                       [(ngModel)]  =  "estabelecimento.nome">
             </div>
 
             <div class = "form-group">
-              <label  for = "nome">Razão Social</label>
-              <input  type = "text" 
+              <label  for = "razao">Razão Social</label>
+              <input  [ngClass] = "{'is-invalid': estabelecimento.razao == '' && !form.valid}"
+                      type = "text" 
                       class = "form-control" 
                       id = "razao"
-                      name = "razao" 
+                      formControlName = "razao" 
                       aria-describedby = "razao" 
                       [(ngModel)]  =  "estabelecimento.razao">
             </div>
@@ -116,7 +116,7 @@
               <input  type = "text" 
                       class = "form-control" 
                       id = "lograd"
-                      nome = "lograd"
+                      formControlName = "lograd"
                       [(ngModel)] = "estabelecimento.lograd">
             </div>
 
@@ -125,7 +125,7 @@
               <input  type = "number" 
                       class = "form-control" 
                       id = "inputNumero"
-                      nome = "num"
+                      formControlName = "num"
                       aria-describedby = "inputNumero" 
                       [(ngModel)] = "estabelecimento.num" >
             </div>
@@ -134,7 +134,7 @@
               <input  type = "text"
                       class = "form-control" 
                       id = "uf"
-                      nome = "uf"
+                      formControlName = "uf"
                       aria-describedby = "uf" 
                       [(ngModel)] = "estabelecimento.uf" >
             </div>
@@ -143,7 +143,7 @@
               <input  type = "text"
                       class = "form-control"
                       id = "cep"
-                      nome = "cep"
+                      formControlName = "cep"
                       aria-describedby = "cep"
                       [(ngModel)] = "estabelecimento.cep" >
             </div>
@@ -152,7 +152,7 @@
               <input  type = "text" 
                       class = "form-control" 
                       id = "cidade" 
-                      nome = "cidade"
+                      formControlName = "cidade"
                       aria-describedby = "cidade" 
                       [(ngModel)] = "estabelecimento.cidade" >
             </div>
@@ -225,7 +225,7 @@
     </div>
     <!-- CARD 4 END -->
     <div>
-      <a class="btn btn-primary" (click)="saveEstab()">Salvar</a>
+      <button class="btn btn-primary" type = "submit" >Salvar</button>
     </div>
   </div>
 </form>
