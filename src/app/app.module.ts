@@ -1,4 +1,3 @@
-import { ClientesService } from './components/clientes/clientes.service';
 import { ListaMenuService } from './services/lista-menu.service';
 import { EditMenuService } from './services/edit-menu.service';
 import { RouterModule, Routes } from '@angular/router';

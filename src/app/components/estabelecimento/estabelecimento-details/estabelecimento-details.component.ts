@@ -25,7 +25,7 @@ export class EstabelecimentoDetailsComponent implements OnInit {
     private router: Router
   ) {}
 
-  
+
   ngOnInit() {
     console.log('teste');
     this.cod = this.activatedRoute.snapshot.params.cod;

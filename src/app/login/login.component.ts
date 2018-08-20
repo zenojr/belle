@@ -22,13 +22,6 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  // loginData: Login;
-
-  // user = {
-  //   user: this.loginData.user = '',
-  //   password: this.loginData.senha = '',
-  // };
-
   redirectAfterLogin = ['/home'];
 
   constructor(

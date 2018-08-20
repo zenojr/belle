@@ -7,8 +7,6 @@ import { Estabelecimento } from './estabelecimento.model';
 @Injectable()
 export class EstabelecimentoService {
 
-  
-
   httpOptions = {
     headers: {
       'Accept':  'application/json',
