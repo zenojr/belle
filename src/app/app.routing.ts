@@ -1,21 +1,17 @@
-import { EstabelecimentoCadastroComponent } from './components/estabelecimento/estabelecimento-cadastro/estabelecimento-cadastro.component';
-
-import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
 import { CampanhaComponent } from './components/campanha/campanha.component';
 import { ProfExternoComponent } from './components/prof-externo/prof-externo.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { EspecialidadesComponent } from './components/especialidades/especialidades.component';
-
 import { EstabelecimentoDetailsComponent } from './components/estabelecimento/estabelecimento-details/estabelecimento-details.component';
 import { EstabelecimentoComponent } from './components/estabelecimento/estabelecimento.component';
 import { AuthGuardRouterService } from './services/auth-guard-router.service';
 import { HomeComponent } from './components/home/home.component';
-
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ComissaoComponent } from './components/comissao/comissao.component';
+import { UsuarioDetailsComponent } from './components/usuario/usuario-details/usuario-details.component';
 
 const appRoutes: Routes = [
     {
@@ -53,8 +49,8 @@ const appRoutes: Routes = [
         canActivate: [AuthGuardRouterService]
     },
     {
-        path: 'mdUsuario-form',
-        component: UsuarioFormComponent,
+        path: 'mdUsuario-details',
+        component: UsuarioDetailsComponent,
         canActivate: [AuthGuardRouterService]
     },
     {

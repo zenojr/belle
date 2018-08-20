@@ -9,12 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
-
   usuario: Usuario[];
-
   constructor(
-              private usuarioService: UsuarioService
-              ) { }
+    private usuarioService: UsuarioService
+  ) {}
 
   ngOnInit() {
     this.listar();

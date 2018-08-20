@@ -2,7 +2,6 @@ import { Estabelecimento } from '../estabelecimento.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EstabelecimentoService } from '../estabelecimento.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ListaMenuService } from '../../../services/lista-menu.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -104,8 +103,4 @@ export class EstabelecimentoDetailsComponent implements OnInit {
     }
     console.log(this.estabelecimento);
   }
-
-
-
-
 }

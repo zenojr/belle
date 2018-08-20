@@ -1,7 +1,6 @@
 import { JwtTokenService } from './../../services/jwt-token.service';
 import { Usuario } from './usuario.model';
 import { Injectable } from '@angular/core';
-
 import { RequestOptions } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -19,22 +18,26 @@ export class UsuarioService {
   };
 
   urlBase = 'https://app.bellesoftware.com.br/release/php/belle/amfphp/Services/controller';
-
   urlModule = '/Usuario/v1.0/listarusuarios';
 
   constructor(
     private jwtTokenService: JwtTokenService,
     private http: HttpClient
-  ) { }
+  ) {
+    console.log('userService');
+  }
 
   listar(): Promise<any> {
+    console.log( 'listar sem cod user' );
+    delete this.httpOptions.headers[ 'filtro' ];
     return this.http
     .get<any>(this.urlBase + this.urlModule, this.httpOptions).toPromise();
   }
 
-  listarPorCod(cod: string): Promise<any> {
+  listarPorLogin(login: string): Promise<any> {
+    console.log( 'listaLoginUser' );
     const httpOptions = this.httpOptions;
-    httpOptions.headers['filtro'] = cod;
+    httpOptions.headers['filtro'] = login;
     return this.http
     .get<any>(this.urlBase + this.urlModule, httpOptions).toPromise();
   }
@@ -44,5 +47,6 @@ export class UsuarioService {
     return this.http
     .post<any>(this.urlBase + this.urlModule, usuario, this.httpOptions).toPromise();
   }
+
 
 }

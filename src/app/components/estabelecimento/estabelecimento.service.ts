@@ -24,7 +24,6 @@ export class EstabelecimentoService {
     private http: HttpClient
    ) {
     console.log('Estab service');
-
    }
 
    listar(): Promise<any> {

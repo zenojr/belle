@@ -41,10 +41,11 @@ import { ProfExternoComponent } from './components/prof-externo/prof-externo.com
 import { CampanhaComponent } from './components/campanha/campanha.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { EstabelecimentoService } from './components/estabelecimento/estabelecimento.service';
-import { UsuarioFormComponent } from './components/usuario/usuario-form/usuario-form.component';
-import { EstabelecimentoCadastroComponent } from './components/estabelecimento/estabelecimento-cadastro/estabelecimento-cadastro.component';
 import { ClientesDetailsComponent } from './components/clientes/clientes-details/clientes-details.component';
 import { UsuarioService } from './components/usuario/usuario.service';
+import { UsuarioDetailsComponent } from './components/usuario/usuario-details/usuario-details.component';
+
+
 
 
 @NgModule({
@@ -62,9 +63,8 @@ import { UsuarioService } from './components/usuario/usuario.service';
     ProfExternoComponent,
     CampanhaComponent,
     BreadcrumbComponent,
-    UsuarioFormComponent,
-    EstabelecimentoCadastroComponent,
-    ClientesDetailsComponent
+    ClientesDetailsComponent,
+    UsuarioDetailsComponent
   ],
   imports: [
     BrowserModule,
