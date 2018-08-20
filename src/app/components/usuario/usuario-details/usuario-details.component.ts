@@ -61,5 +61,20 @@ export class UsuarioDetailsComponent implements OnInit {
     }
   }
 
+  onSubmit() {
+    this.submitted = true;
+    if (this.form.valid) {
+      this.usuarioService.gravar(this.usuario)
+      .then(
+       () => {
+        this.router.navigate(this.redirect);
+        }
+      ) ;
+
+    } else {
+      alert('Por favor preencha os campos obrigatórios!');
+    }
+    console.log(this.usuario);
+  }
+
 }
- 
